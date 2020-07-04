@@ -19,7 +19,7 @@ def verify(ids):
 
     for id_group in id_groups:
         erased = twitter.check_exists(id_group)
-    
+
         print("atualizando tweets apagados...")
         database.update_erased_tweets(erased)
 
@@ -27,6 +27,7 @@ def verify(ids):
         database.update_checked(id_group)
 
         print("Fim de grupo")
+        time.sleep(3)
 
     # for arroba in arrobas:
     #     urls = []
