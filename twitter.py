@@ -12,12 +12,13 @@ def check_exists(id_group):
         ids.append(str(id[0]))
 
     #print(ids)
-    for status in api.statuses_lookup(ids):
-        #print(status.id_str)
-        tweets.append(status.id_str)
+    if len(ids) > 0:
+        for status in api.statuses_lookup(ids):
+            #print(status.id_str)
+            tweets.append(status.id_str)
         
-    print("ids testados: " + str(len(ids)))
-    print("ids retornados: " + str(len(tweets)))
+    print("ids apagados: " + str(len(ids) - len(tweets)))
+    # print("ids retornados: " + str(len(tweets)))
 
     erased = set(ids) - set(tweets)
 

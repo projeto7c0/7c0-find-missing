@@ -3,7 +3,7 @@ import database_auth
 
 
 def lock_tweets():
-    sql = "update mimic_tweets set check_erased = 1 where erased = 0 and handle = 'filgmartin';"
+    sql = "update mimic_tweets set check_erased = 1 where erased = 0;"
     db = database_auth.conecta_banco()
     cursor = db.cursor()
     try:
@@ -34,7 +34,7 @@ def update_erased_tweets(id_set):
     cursor = db.cursor()
 
     for id in id_set:
-        sql = "update mimic_tweets set erased = 1, check_erased = 2 where idTweets = \"" + id + "\";"
+        sql = "update mimic_tweets set timestamp_erased = NOW(), erased = 1, check_erased = 2 where idTweets = \"" + id + "\";"
         try:
             cursor.execute(sql)
         except Exception as E:
@@ -54,7 +54,7 @@ def update_checked(id_set):
 
     sql += "\"0\");"
 
-    print(sql)
+    # print(sql)
     try:
         cursor.execute(sql)
     except Exception as E:

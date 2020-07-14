@@ -27,7 +27,7 @@ def verify(ids):
         database.update_checked(id_group)
 
         print("Fim de grupo")
-        time.sleep(3)
+        time.sleep(2)
 
     # for arroba in arrobas:
     #     urls = []
