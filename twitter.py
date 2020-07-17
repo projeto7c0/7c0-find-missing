@@ -2,9 +2,7 @@ import tweepy
 import twitter_auth
 
 
-def check_exists(id_group):
-    api = twitter_auth.autentica_search()
-
+def check_exists(id_group, api):
     tweets = []
     ids = []
     for id in id_group:
@@ -23,3 +21,7 @@ def check_exists(id_group):
     erased = set(ids) - set(tweets)
 
     return erased
+
+def autentica():
+    api = twitter_auth.autentica_search()
+    return api

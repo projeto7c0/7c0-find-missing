@@ -4,6 +4,7 @@ if __name__ == '__main__':
     import verify_deletion
     from random import shuffle
 
+    
     print("iniciando a coleta de ids... ")
     ids = database.get_ids()
 
