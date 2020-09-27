@@ -25,3 +25,7 @@ def check_exists(id_group, api):
 def autentica():
     api = twitter_auth.autentica_search()
     return api
+
+def autentica_election():
+    api = twitter_auth.autentica_election()
+    return api
